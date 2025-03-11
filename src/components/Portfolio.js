@@ -7,8 +7,8 @@ const Portfolio = () => {
   // Portfolio data - replace with your own information
   const portfolioData = {
     name: "Kieren Hussey",
-    title: "Frontend Developer",
-    bio: "I'm a passionate frontend developer with 5 years of experience creating responsive and user-friendly web applications. I specialize in React, JavaScript, and modern CSS frameworks.",
+    title: "Full Stack developer",
+    bio: "I'm a passionate frontend developer with 4 years of experience creating responsive and user-friendly web applications. I specialize in React, JavaScript, and modern CSS frameworks.",
     
     skills: [
       { name: "React", level: 90 },
