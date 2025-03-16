@@ -16,3 +16,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.before\:left-0::before {
+  content: var(--tw-content);
+  left: 1px !important;
+}
+
+
+@media (max-width: 600px) {
+  .profile-mobile {
+    margin-left: 2.5em;
+  }
+}
+
+
+.text-center {
+  text-align: center;
+}
