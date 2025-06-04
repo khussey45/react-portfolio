@@ -47,7 +47,7 @@ const Portfolio = () => {
         title: "Hussey World",
         description: "A web app for posting messages for other users to read in a newsfeed",
         technologies: ["Angular", "Springboot", "PostgreSQL", "Linode"],
-        image: "/HusseyWorld.jpeg"
+        image: "/hussey-word.png"
       },
       {
         title: "Kieren Hussey Portfolio Site",
