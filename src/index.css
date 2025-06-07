@@ -103,7 +103,7 @@ nav {
 }
 
 .background-image {
-  background-image: url('/public/bg1.jpg');
+  background-image: url('/public/bg2.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -118,7 +118,7 @@ nav {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6); /* Adjust the last value (0.6) for opacity */
+  background-color: rgba(36, 34, 34, 0.6); 
   z-index: 1;
 }
 
