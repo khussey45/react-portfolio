@@ -79,3 +79,25 @@ nav {
     --tw-bg-opacity: 1;
     background-color: #0096FF;
 }
+
+
+.profile-desktop {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+  border: 3px solid #242526;
+  transition: all 0.3s ease-in-out;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.profile-desktop:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.4);
+  border-color: #89CFF0;
+}

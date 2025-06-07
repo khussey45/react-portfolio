@@ -58,7 +58,7 @@ const Portfolio = () => {
     ],
     
     contact: {
-      email: "kierenhussey@example.com",
+      // email: "kierenhussey@example.com",
       location: "On, Canada",
       github: "github.com/khussey45",
       linkedin: "linkedin.com/in/kieren-hussey-1a9093222"
@@ -141,8 +141,8 @@ const Portfolio = () => {
           <div className="flex flex-col md:flex-row gap-10">
             <div className="md:w-1/2">
               <img src="/profile.jpeg" alt="Profile" 
-                   className="rounded-lg shadow-lg w-full profile-mobile" 
-                   style={{ height: '300px', width: '300px', objectFit: 'cover' }}
+                   className="rounded-lg shadow-lg w-full profile-mobile profile-desktop" 
+                  //  style={{ height: '300px', width: '300px', objectFit: 'cover' }}
                    
               />
             </div>
@@ -238,13 +238,13 @@ const Portfolio = () => {
                   <svg className="w-5 h-5 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
                   </svg>
-                  {portfolioData.contact.github}
+                  <a href="https://github.com/khussey45" target="_blank" className="hover:text-blue-400 transition-colors">{portfolioData.contact.github} </a>
                 </p>
                 <p className="flex items-center">
                   <svg className="w-5 h-5 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
                   </svg>
-                  {portfolioData.contact.linkedin}
+                   <a href="https://www.linkedin.com/in/kieren-hussey-1a9093222/" target="_blank" className="hover:text-blue-400 transition-colors">{portfolioData.contact.linkedin} </a>
                 </p>
               </div>
             </div>
