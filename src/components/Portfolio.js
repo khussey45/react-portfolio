@@ -120,7 +120,7 @@ const Portfolio = () => {
       {/* Main content */}
       <div className="container mx-auto px-6 pt-20">
         {/* Hero section */}
-        <section id="home" className="min-h-screen flex items-center justify-center">
+        <section id="home" className="min-h-screen flex items-center justify-center background-image">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-blue-600 mb-2">Hello, I'm</p>
             <h1 className="text-5xl font-bold mb-4">{portfolioData.name}</h1>
