@@ -69,8 +69,8 @@ const Portfolio = () => {
     return (
       <div className="mb-4">
         <div className="flex justify-between mb-1">
-          <span className="font-medium">{name}</span>
-          <span>{level}%</span>
+          <span className="font-medium text-gray-600">{name}</span>
+          <span className="text-gray-600">{level}%</span>
         </div>
         <div className="w-full bg-gray-200 rounded-full h-2">
           <div 

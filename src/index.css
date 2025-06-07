@@ -34,3 +34,48 @@ code {
 .text-center {
   text-align: center;
 }
+
+.bg-gray-50 {
+    --tw-bg-opacity: 1;
+    background-color: #242526;
+}
+
+h1, h2, h3, p {
+  color: #fff !important;
+}
+
+
+.p-6 {
+    padding: 1.5rem;
+    background-color: #242526;
+}
+
+.bg-white {
+    --tw-bg-opacity: 1;
+    background-color: #18191A;
+
+}
+
+.bg-gray-800 {
+    --tw-bg-opacity: 1;
+    background-color: #18191A;
+}
+
+nav {
+  color: #fff !important;
+}
+
+.text-gray-600 {
+    --tw-text-opacity: 1;
+    color: #fff;
+}
+
+.text-blue-600 {
+    --tw-text-opacity: 1;
+    color: #89CFF0 !important;
+}
+
+.bg-blue-600 {
+    --tw-bg-opacity: 1;
+    background-color: #0096FF;
+}
