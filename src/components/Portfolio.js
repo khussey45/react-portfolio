@@ -41,24 +41,27 @@ const Portfolio = () => {
         title: "My Benefits",
         description: "A web app for Ontario Works and Ontario disability support.",
         technologies: ["Angular", "Springboot", "Oracle SQL", "Node.js", "Azure"],
-        image: "/MyB.jpeg"
+        image: "/MyB.jpeg",
+        url: "https://mybenefits.mcss.gov.on.ca/auth/login"
       },
       {
         title: "Hussey World",
         description: "A web app for posting messages for other users to read in a newsfeed",
         technologies: ["Angular", "Springboot", "PostgreSQL", "Linode"],
-        image: "/hussey-world.png"
+        image: "/hussey-world.png",
+        url: "https://hussey.world/landing"
       },
       {
         title: "Kieren Hussey Portfolio Site",
         description: "This is the current site you are on!",
         technologies: ["React", "TailwindCSS", "Node.js"],
-        image: "/Portfolio.jpeg"
+        image: "/Portfolio.jpeg",
+        url: "https://kierenhussey.com/"
       }
     ],
     
     contact: {
-      // email: "kierenhussey@example.com",
+      email: "khussey45@gmail.com",
       location: "On, Canada",
       github: "github.com/khussey45",
       linkedin: "linkedin.com/in/kieren-hussey-1a9093222"
@@ -161,15 +164,7 @@ const Portfolio = () => {
           </div>
         </section>
 
-        {/* Skills section */}
-        <section id="skills" className="py-20">
-          <h2 className="text-3xl font-bold mb-10 text-center">My Skills</h2>
-          <div className="max-w-2xl mx-auto">
-            {portfolioData.skills.map((skill, index) => (
-              <SkillBar key={index} name={skill.name} level={skill.level} />
-            ))}
-          </div>
-        </section>
+        
 
         {/* Experience section */}
         <section id="experience" className="py-20">
@@ -204,11 +199,27 @@ const Portfolio = () => {
                       </span>
                     ))}
                   </div>
-                  <button className="text-blue-600 hover:text-blue-800 transition-colors">
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-800 transition-colors"
+                  >
                     View Details →
-                  </button>
-                </div>
+                  </a>
+
+                </div> 
               </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Skills section */}
+        <section id="skills" className="py-20">
+          <h2 className="text-3xl font-bold mb-10 text-center">My Skills</h2>
+          <div className="max-w-2xl mx-auto">
+            {portfolioData.skills.map((skill, index) => (
+              <SkillBar key={index} name={skill.name} level={skill.level} />
             ))}
           </div>
         </section>
