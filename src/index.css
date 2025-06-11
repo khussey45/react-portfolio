@@ -103,7 +103,7 @@ nav {
 }
 
 .background-image {
-  background-image: url('/public/bg2.jpg');
+  background-image: url('/public/bg3.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -126,4 +126,20 @@ nav {
 .background-image > * {
   position: relative;
   z-index: 2;
+}
+
+
+
+.bio {
+  width: 80% !important;
+  margin-left: 4em;
+}
+
+
+@media (max-width: 800px) {
+
+  .bio {
+    width: 80% !important;
+    margin-left: 2em;
+  }
 }

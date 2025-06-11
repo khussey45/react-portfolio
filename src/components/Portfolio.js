@@ -8,7 +8,7 @@ const Portfolio = () => {
   const portfolioData = {
     name: "Kieren Hussey",
     title: "Full Stack developer",
-    bio: "I'm a passionate developer with experience creating web applications. Tech stack includes Angular, Springboot, React, SQL, Python",
+    bio: "I'm a full stack developer with experience creating web applications. Tech stack includes Angular, Springboot, NestJS, React, SQL",
     
     skills: [
       { name: "Angular", level: 90 },
@@ -18,7 +18,9 @@ const Portfolio = () => {
       { name: "SQL", level: 80 },
       { name: "TypeScript", level: 80 },
       { name: "JavaScript", level: 80 },
-      { name: "Python", level: 75 }
+      { name: "Python", level: 75 },
+      { name: "NestJS", level: 75 },
+      { name: "C++", level: 75 }
     ],
     
     experience: [
@@ -125,10 +127,10 @@ const Portfolio = () => {
         {/* Hero section */}
         <section id="home" className="min-h-screen flex items-center justify-center background-image">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="text-blue-600 mb-2">Hello, I'm</p>
+            <p className="text-blue-600 mb-2 bio">Hello, I'm</p>
             <h1 className="text-5xl font-bold mb-4">{portfolioData.name}</h1>
             <h2 className="text-3xl font-medium text-gray-600 mb-6">{portfolioData.title}</h2>
-            <p className="text-xl text-gray-700 mb-8">{portfolioData.bio}</p>
+            <p className="text-xl text-gray-700 mb-8 bio">{portfolioData.bio}</p>
             <button 
               onClick={() => handleNavClick('contact')}
               className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
