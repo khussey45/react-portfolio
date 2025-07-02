@@ -125,21 +125,21 @@ const Portfolio = () => {
       {/* Main content */}
 
       {/* <!-- SalesOptAI Chat Widget --> */}
-      <div id="salesoptai-chat" 
+      {/* <div id="salesoptai-chat" 
           data-token="web_8332_20250630212045"
           data-color="#000000"
           data-title="Chat with us"
           data-api-url="https://salesoptai2025-backend-ajc8hac0f6aqdvhw.canadacentral-01.azurewebsites.net">
-      </div>
+      </div> */}
 
       {/* <!-- SalesOptAI LeadFlow Widget --> */}
-      {/* <div id="salesoptai-chat" 
+      <div id="salesoptai-chat" 
           data-token="leadflow_8332_20250702170017"
           data-color="#000000"
           data-title="Chat with us"
           data-auto-open="true"
           data-api-url="https://salesoptai2025-backend-ajc8hac0f6aqdvhw.canadacentral-01.azurewebsites.net">
-      </div> */}
+      </div>
 
       
 
