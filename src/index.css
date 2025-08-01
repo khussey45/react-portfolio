@@ -143,3 +143,7 @@ nav {
     margin-left: 2em;
   }
 }
+
+.mb-4 {
+  text-align: left !important;
+}

@@ -8,7 +8,7 @@ const Portfolio = () => {
   const portfolioData = {
     name: "Kieren Hussey",
     title: "Full Stack developer",
-    bio: "I'm a full stack developer with experience creating web applications. Tech stack includes Angular, Springboot, NestJS, React, SQL",
+    bio: "I'm a full stack developer with experience creating web applications. Tech stack includes Ruby on Rails, Angular, Springboot, React, SQL",
     
     skills: [
       { name: "Angular", level: 90 },
@@ -19,7 +19,7 @@ const Portfolio = () => {
       { name: "TypeScript", level: 80 },
       { name: "JavaScript", level: 80 },
       { name: "Python", level: 75 },
-      { name: "NestJS", level: 75 },
+      { name: "Rails", level: 75 },
       { name: "C++", level: 75 }
     ],
     
@@ -48,10 +48,10 @@ const Portfolio = () => {
       },
       {
         title: "Hussey World",
-        description: "A web app for posting messages for other users to read in a newsfeed",
-        technologies: ["Angular", "Springboot", "PostgreSQL", "Linode"],
-        image: "/hussey-world.png",
-        url: "https://hussey.world/landing"
+        description: "A web app for buying and selling products.",
+        technologies: ["Rails", "SQLite", "Linode"],
+        image: "/HusseyWorld-Rails.png",
+        url: "https://hussey.world/"
       },
       {
         title: "Kieren Hussey Portfolio Site",
@@ -124,31 +124,12 @@ const Portfolio = () => {
 
       {/* Main content */}
 
-      {/* <!-- SalesOptAI Chat Widget --> */}
-      {/* <div id="salesoptai-chat" 
-          data-token="web_8332_20250630212045"
-          data-color="#000000"
-          data-title="Chat with us"
-          data-api-url="https://salesoptai2025-backend-ajc8hac0f6aqdvhw.canadacentral-01.azurewebsites.net">
-      </div> */}
-
-      {/* <!-- SalesOptAI LeadFlow Widget --> */}
-      <div id="salesoptai-chat" 
-          data-token="leadflow_8332_20250702170017"
-          data-color="#000000"
-          data-title="Chat with us"
-          data-auto-open="true"
-          data-api-url="https://salesoptai2025-backend-ajc8hac0f6aqdvhw.canadacentral-01.azurewebsites.net">
-      </div>
-
-      
-
-      <div className="container mx-auto px-6 pt-20">
+        <div className="container mx-auto px-6 pt-20">
         {/* Hero section */}
         <section id="home" className="min-h-screen flex items-center justify-center background-image">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-blue-600 mb-2 bio">Hello, I'm</p>
-            <h1 className="text-5xl font-bold mb-4">{portfolioData.name}</h1>
+            <h1 className="text-5xl font-bold">{portfolioData.name}</h1>
             <h2 className="text-3xl font-medium text-gray-600 mb-6">{portfolioData.title}</h2>
             <p className="text-xl text-gray-700 mb-8 bio">{portfolioData.bio}</p>
             <button 
