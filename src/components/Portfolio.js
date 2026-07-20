@@ -47,19 +47,20 @@ const Portfolio = () => {
         url: "https://mybenefits.mcss.gov.on.ca/auth/login"
       },
       {
-        title: "Hussey World",
-        description: "A web app for buying and selling products.",
-        technologies: ["Rails", "SQLite", "Linode"],
-        image: "/HusseyWorld-Rails.png",
-        url: "https://hussey.world/"
+        title: "Your Learning",
+        description: "Learning hub for Kindergarten - Grade 12",
+        technologies: ["Ruby", "Rails", "SQLite", "Linode"],
+        image: "/yourlearning.png",
+        url: "https://yourlearning.ca/"
       },
       {
-        title: "Kieren Hussey Portfolio Site",
-        description: "This is the current site you are on!",
-        technologies: ["React", "TailwindCSS", "Node.js"],
-        image: "/Portfolio.jpeg",
-        url: "https://kierenhussey.com/"
-      }
+        title: "Fly Fall",
+        description: "2D Game Flying in a ship",
+        technologies: ["C++", "WASM", "Raylib", "GitHub"],
+        image: "/flyfall.png",
+        url: "https://flyfall.ca/"
+      },
+
     ],
     
     contact: {
@@ -122,9 +123,12 @@ const Portfolio = () => {
         </div>
       </nav>
 
-      {/* Main content */}
 
-        <div className="container mx-auto px-6 pt-20">
+      
+
+      
+
+      <div className="container mx-auto px-6 pt-20">
         {/* Hero section */}
         <section id="home" className="min-h-screen flex items-center justify-center background-image">
           <div className="max-w-3xl mx-auto text-center">
@@ -155,14 +159,10 @@ const Portfolio = () => {
             <div className="md:w-1/2">
               <h3 className="text-2xl font-bold mb-4">Who am I?</h3>
               <p className="text-gray-700 mb-4">
-                I'm a full stack developer based in Ontario Canada. My foundation is building web applications that are responsive with CRUD capabilities.
+                Systems engineer creating CRUD apps and games. 
               </p>
-              <p className="text-gray-700 mb-4">
-                My hobbies and other interests include hiking, reading, playing video games and music production. 
-              </p>
-              <p className="text-gray-700 mb-4">
-                I'm open to explore new technologies with an interest in AI as well as XR including virtual and augmented reality.
-              </p>
+              
+              
             </div>
           </div>
         </section>
