@@ -60,7 +60,7 @@ const Portfolio = () => {
             onClick={() => handleNavClick('home')}
             className="font-mono font-bold text-fog-100 hover:text-accent transition-colors"
           >
-            <span className="text-accent">kh</span> @ kierenhussey.com
+            <span className="text-accent"></span>kierenhussey
           </button>
           <div className="hidden md:flex gap-6">{navLinks}</div>
           <button
