@@ -15,6 +15,22 @@
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="canonical" href="https://kierenhussey.com/" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://kierenhussey.com/" />
+    <meta property="og:title" content="Kieren Hussey — Full Stack Developer" />
+    <meta
+      property="og:description"
+      content="Kieren Hussey — full stack developer building web apps with Angular, React, Rails, and Spring Boot."
+    />
+    <meta property="og:image" content="https://kierenhussey.com/profile.jpeg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kieren Hussey — Full Stack Developer" />
+    <meta
+      name="twitter:description"
+      content="Kieren Hussey — full stack developer building web apps with Angular, React, Rails, and Spring Boot."
+    />
+    <meta name="twitter:image" content="https://kierenhussey.com/profile.jpeg" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -30,10 +46,27 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Kieren Hussey</title>
+    <title>Kieren Hussey — Full Stack Developer</title>
+    <!--
+      scripts/prerender.js bakes a plain-HTML copy of the site content into
+      #root at build time so crawlers that don't run JavaScript can read it.
+      This hides that fallback the instant we know JS is available, so real
+      visitors never see it. React clears #root on mount regardless.
+    -->
+    <script>
+      document.documentElement.className += " js";
+    </script>
+    <style>
+      .js #prerender-fallback {
+        display: none;
+      }
+    </style>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      This site's interactive version needs JavaScript. A plain-text copy of the
+      content is below.
+    </noscript>
     <div id="root"></div>
     <!--
       This HTML file is a template.
