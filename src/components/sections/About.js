@@ -3,30 +3,26 @@ import portfolioData from '../../data/portfolio';
 import SectionHeading from './SectionHeading';
 
 const About = () => (
-  <section id="about" className="py-24 max-w-4xl mx-auto px-6">
+  <section id="about" className="signal-section py-28 max-w-6xl mx-auto px-6">
     <SectionHeading number="01" title="About" />
-    <div className="flex flex-col md:flex-row gap-10 items-start">
-      <div className="relative shrink-0 mx-auto md:mx-0 group">
-        <div
-          className="absolute inset-0 translate-x-3 translate-y-3 rounded-lg border border-accent/40 transition-transform group-hover:translate-x-2 group-hover:translate-y-2"
-          aria-hidden="true"
-        />
-        <img
-          src="/profile.jpeg"
-          alt={`${portfolioData.name} profile`}
-          className="relative w-64 h-64 object-cover rounded-lg border border-ink-700"
-        />
-      </div>
+    <div className="grid md:grid-cols-[1.25fr_0.75fr] gap-10 md:gap-20 items-end">
       <div>
-        <p className="text-fog-300 mb-4 leading-relaxed">{portfolioData.bio}</p>
-        <p className="text-fog-300 leading-relaxed">
+        <p className="text-fog-100 text-3xl sm:text-4xl md:text-5xl leading-[1.12] tracking-[-0.04em]">
+          {portfolioData.bio}
+        </p>
+      </div>
+      <div className="border-l border-accent/30 pl-6 md:pl-8">
+        <p className="font-mono text-[10px] tracking-[0.2em] text-accent mb-5">WORKING PRINCIPLE</p>
+        <p className="text-fog-300 text-lg leading-relaxed">
           I like working across the whole stack — shipping CRUD apps used by real
           people, and building games when I want to get closer to the metal.
         </p>
-        <p className="font-mono text-sm text-fog-500 mt-6">
-          <span className="text-accent">{'//'}</span> based in {portfolioData.contact.location}
-        </p>
       </div>
+    </div>
+    <div className="data-strip mt-14">
+          <p><span>BASE</span>{portfolioData.contact.location}</p>
+          <p><span>MODE</span>Frontend ↔ Backend</p>
+          <p><span>FOCUS</span>Useful systems</p>
     </div>
   </section>
 );

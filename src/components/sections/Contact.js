@@ -13,22 +13,24 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 max-w-3xl mx-auto px-6">
-      <SectionHeading number="05" title="Contact" />
-      <p className="text-fog-300 mb-8 leading-relaxed">
-        I'm open to new opportunities and interesting projects. The fastest way
-        to reach me is email — I'll get back to you as soon as I can.
-      </p>
-      <div className="rounded-lg border border-ink-800 bg-ink-900 p-6 font-mono text-sm space-y-3">
+    <section id="contact" className="contact-section py-32 px-6 border-t border-ink-800">
+      <div className="max-w-6xl mx-auto grid lg:grid-cols-[1.2fr_0.8fr] gap-16">
+      <div>
+        <SectionHeading number="05" title="Contact" />
+        <p className="contact-lede text-fog-100 font-bold tracking-[-0.045em] leading-[1.05]">
+          Have a useful problem?<br /><a className="text-accent hover:text-fog-100 transition-colors" href={`mailto:${contact.email}`}>Let’s build through it.</a>
+        </p>
+      </div>
+      <div className="font-mono text-sm border-t border-ink-700 pt-4">
         {rows.map((row) => (
-          <p key={row.label} className="flex flex-wrap gap-x-3">
-            <span className="text-fog-500 w-20">{row.label}:</span>
+          <p key={row.label} className="flex flex-col sm:flex-row gap-2 sm:gap-5 py-4 border-b border-ink-800">
+            <span className="text-fog-500 sm:w-20 uppercase text-[10px] tracking-widest">{row.label}</span>
             {row.href ? (
               <a
                 href={row.href}
                 target={row.href.startsWith('mailto:') ? undefined : '_blank'}
                 rel="noopener noreferrer"
-                className="text-accent hover:underline underline-offset-4 break-all"
+                className="text-fog-100 hover:text-accent transition-colors break-all"
               >
                 {row.value}
               </a>
@@ -37,6 +39,7 @@ const Contact = () => {
             )}
           </p>
         ))}
+      </div>
       </div>
     </section>
   );

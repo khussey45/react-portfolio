@@ -3,45 +3,48 @@ import portfolioData from '../../data/portfolio';
 import SectionHeading from './SectionHeading';
 
 const Projects = () => (
-  <section id="projects" className="py-24 max-w-6xl mx-auto px-6">
-    <SectionHeading number="03" title="Projects" />
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <section id="projects" className="signal-section py-28 max-w-6xl mx-auto px-6">
+    <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-5 mb-14">
+      <SectionHeading number="03" title="Projects" />
+      <p className="font-mono text-xs text-fog-500 max-w-xs sm:text-right mb-12">Three systems / different constraints / one bias toward shipping.</p>
+    </div>
+    <div className="space-y-5">
       {portfolioData.projects.map((project, index) => (
         <a
           key={project.title}
           href={project.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex flex-col rounded-lg border border-ink-800 bg-ink-900 overflow-hidden hover:border-accent/40 hover:-translate-y-1 transition-all duration-200"
+          className="project-signal group"
         >
-          <div className="relative h-44 overflow-hidden border-b border-ink-800">
+          <div className="project-index">0{index + 1}</div>
+          <div className="relative project-image overflow-hidden">
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-300"
+              className="w-full h-full object-cover object-top saturate-[1.1] opacity-90 group-hover:saturate-[1.25] group-hover:opacity-100 group-hover:scale-[1.025] transition-all duration-500"
             />
           </div>
-          <div className="flex flex-col flex-1 p-6">
-            <p className="font-mono text-xs text-fog-500 mb-2">
-              proj_{String(index + 1).padStart(2, '0')}
-            </p>
-            <h3 className="text-xl font-bold text-fog-100 mb-2 group-hover:text-accent transition-colors">
+          <div className="flex flex-col justify-center py-7 px-6 md:px-9">
+            <p className="font-mono text-[10px] tracking-[0.2em] text-accent mb-3">DEPLOYED SYSTEM</p>
+            <h3 className="text-2xl sm:text-3xl font-bold text-fog-100 mb-3 group-hover:text-accent transition-colors">
               {project.title}
             </h3>
-            <p className="text-fog-300 text-sm leading-relaxed mb-4 flex-1">
+            <p className="text-fog-300 leading-relaxed mb-5 max-w-xl">
               {project.description}
             </p>
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="font-mono text-xs px-2 py-1 rounded border border-ink-700 text-fog-300"
+                  className="font-mono text-[10px] uppercase tracking-wider text-fog-500"
                 >
-                  {tech}
+                  / {tech}
                 </span>
               ))}
             </div>
           </div>
+          <span className="project-arrow" aria-hidden="true">↗</span>
         </a>
       ))}
     </div>
