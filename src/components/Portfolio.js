@@ -3,10 +3,11 @@ import data from '../data/portfolio';
 import CurrentFocus from './sections/CurrentFocus';
 import AI from './sections/AI';
 import Skills from './sections/Skills';
+import Experience from './sections/Experience';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
 
-const links = [['focus', 'Now'], ['ai', 'AI'], ['skills', 'Toolkit'], ['projects', 'Projects'], ['contact', 'Contact']];
+const links = [['focus', 'Now'], ['ai', 'AI'], ['skills', 'Toolkit'], ['experience', 'Experience'], ['projects', 'Projects'], ['contact', 'Contact']];
 
 export default function Portfolio() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,6 +27,7 @@ export default function Portfolio() {
         <CurrentFocus />
         <AI />
         <Skills />
+        <Experience />
         <Projects />
         <Contact />
       </main>

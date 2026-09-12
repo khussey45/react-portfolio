@@ -9,8 +9,9 @@
 2. **Current focus:** lead with the current project or focus of study and a short explanation of what Kieren is building or learning.
 3. **AI stack and experience:** highlight practical work with LLMs, agents, agent harnesses, and Model Context Protocol (MCP), supported by specific tools and examples when supplied.
 4. **Broader technical stack:** cover CAD, web development, C/C++, Python, and mechanical and electrical engineering. Distinguish hands-on experience from areas of study.
-5. **Projects:** include all portfolio projects with brief descriptions, technologies, and links to their websites or repositories where available.
-6. **Contact:** finish with email and links to relevant profiles and websites.
+5. **Background & experience:** show the existing work and education history in its own section below the toolkit.
+6. **Projects:** include all portfolio projects with brief descriptions, technologies, and links to their websites or repositories where available.
+7. **Contact:** finish with email and links to relevant profiles and websites.
 
 ## Implementation
 

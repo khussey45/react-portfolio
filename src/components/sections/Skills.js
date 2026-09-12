@@ -6,6 +6,5 @@ export default function Skills() {
     <SectionHeading number="02" title="The broader toolkit" />
     <div className="section-intro"><h3>From pixels<br /><span>to physical things.</span></h3><p>A foundation in software, with a growing interest in the mechanics and electronics that make things move.</p></div>
     <div className="stack-list">{data.broaderStack.map(group => <article className="stack-row" key={group.label}><div><h4>{group.label}</h4><span className="tiny-label">{group.status}</span></div><div className="tags">{group.skills.map(skill => <span key={skill}>{skill}</span>)}</div></article>)}</div>
-    <details className="experience"><summary>Background & experience <span aria-hidden="true">+</span></summary><div>{data.experience.map(job => <article key={job.company}><span className="tiny-label">{job.period}</span><h4>{job.position}</h4><p className="company">{job.company}</p><p>{job.description}</p></article>)}</div></details>
   </section>;
 }
