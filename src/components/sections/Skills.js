@@ -1,32 +1,11 @@
 import React from 'react';
-import portfolioData from '../../data/portfolio';
+import data from '../../data/portfolio';
 import SectionHeading from './SectionHeading';
-
-const Skills = () => (
-  <section id="skills" className="signal-section py-28 max-w-6xl mx-auto px-6">
-    <SectionHeading number="04" title="Capability map" />
-    <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-ink-800">
-      {portfolioData.skillGroups.map((group, index) => (
-        <div
-          key={group.label}
-          className="capability-cell border-r border-b border-ink-800 p-7 sm:p-9"
-        >
-          <p className="font-mono text-[10px] tracking-[0.2em] text-accent mb-8">
-            NODE / 0{index + 1}
-          </p>
-          <h3 className="text-xl text-fog-100 font-bold mb-5">{group.label}</h3>
-          <ul className="space-y-2">
-            {group.skills.map((skill) => (
-              <li key={skill} className="flex items-center gap-3 text-fog-300">
-                <span className="w-1 h-1 rounded-full bg-accent" aria-hidden="true" />
-                {skill}
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
-    </div>
-  </section>
-);
-
-export default Skills;
+export default function Skills() {
+  return <section id="skills" className="section">
+    <SectionHeading number="02" title="The broader toolkit" />
+    <div className="section-intro"><h3>From pixels<br /><span>to physical things.</span></h3><p>A foundation in software, with a growing interest in the mechanics and electronics that make things move.</p></div>
+    <div className="stack-list">{data.broaderStack.map(group => <article className="stack-row" key={group.label}><div><h4>{group.label}</h4><span className="tiny-label">{group.status}</span></div><div className="tags">{group.skills.map(skill => <span key={skill}>{skill}</span>)}</div></article>)}</div>
+    <details className="experience"><summary>Background & experience <span aria-hidden="true">+</span></summary><div>{data.experience.map(job => <article key={job.company}><span className="tiny-label">{job.period}</span><h4>{job.position}</h4><p className="company">{job.company}</p><p>{job.description}</p></article>)}</div></details>
+  </section>;
+}

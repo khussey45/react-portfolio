@@ -1,8 +1,43 @@
 // All site content lives here. Components only render this data.
 const portfolioData = {
   name: "Kieren Hussey",
-  title: "Full Stack Developer",
-  bio: "I build web applications end to end — from Angular and React frontends to Rails and Spring Boot backends — and games in C++ on the side.",
+  title: "Technology Developer",
+  bio: "Exploring the space between software, AI, and the physical world. Building things, understanding how they work, and learning along the way.",
+  currentFocus: {
+    title: "A robotic arm.\nA new set of challenges.",
+    description: "My current project is a robotic arm — a place to bring software, mechanical design, and electronics together.",
+    images: [
+      {
+        src: "/robot-arm-placeholder.png",
+        alt: "Concept image of an orange and white desktop robotic arm; temporary project illustration",
+        caption: "Concept image · project photos coming soon",
+      },
+      {
+        src: "/robot-arm-detail-placeholder.png",
+        alt: "Temporary robotic arm concept showing the linkage, servos, and wiring from behind",
+        caption: "Mechanism study · temporary concept image",
+      },
+    ],
+    tags: ["Robotics", "CAD", "Electronics", "Programming"],
+  },
+  ai: {
+    title: "Building with AI.",
+    description: "An evolving focus on LLMs and the systems around them: agents, harnesses, and connections to real tools.",
+    areas: [
+      { title: "LLMs", subtitle: "The models", description: "Language models, context, and the interface between an idea and a useful result." },
+      { title: "Agents", subtitle: "The workflows", description: "Tool use, planning, and multi-step workflows that move a task forward." },
+      { title: "Harnesses", subtitle: "The environment", description: "The instructions, tools, and feedback around an agent’s work." },
+      { title: "MCP", subtitle: "The connections", description: "Model Context Protocol: connecting AI applications to tools and context." },
+    ],
+    note: "Specific tools and build notes coming soon.",
+  },
+  broaderStack: [
+    { label: "Web development", status: "Experience", skills: ["Ruby on Rails", "Angular", "React", "Spring Boot", "SQL"] },
+    { label: "Programming", status: "Experience & exploration", skills: ["C++", "C", "Python"] },
+    { label: "Servers & hosting", status: "Experience", skills: ["Linode / Akamai", "Linux", "Ubuntu",] },
+    { label: "Design & fabrication", status: "Current study", skills: ["CAD", "Mechanical engineering"] },
+    { label: "Electronics & control", status: "Current study", skills: ["Electrical engineering", "Robotics"] },
+  ],
 
   skillGroups: [
     {

@@ -50,7 +50,7 @@ const escapeHtml = (value) =>
 function buildFallbackHtml(data) {
   const { contact } = data;
 
-  const skills = data.skillGroups
+  const skills = data.broaderStack
     .map(
       (group) => `      <li><strong>${escapeHtml(group.label)}:</strong> ${group.skills
         .map(escapeHtml)
@@ -86,6 +86,16 @@ function buildFallbackHtml(data) {
   </header>
   <main>
     <section>
+      <h2>Current focus: ${escapeHtml(data.currentFocus.title)}</h2>
+      <p>${escapeHtml(data.currentFocus.description)}</p>
+    </section>
+    <section>
+      <h2>AI &amp; tools</h2>
+      <p>${escapeHtml(data.ai.description)}</p>
+      <ul>${data.ai.areas.map(area => `<li><strong>${escapeHtml(area.title)}</strong>: ${escapeHtml(area.description)}</li>`).join("")}</ul>
+      <p>${escapeHtml(data.ai.note)}</p>
+    </section>
+    <section>
       <h2>Skills</h2>
       <ul>
 ${skills}
@@ -118,7 +128,6 @@ ${projects}
 
 function buildJsonLd(data) {
   const { contact } = data;
-  const employer = data.experience[0];
 
   const graph = [
     {
@@ -135,14 +144,10 @@ function buildJsonLd(data) {
         addressCountry: "CA",
       },
       sameAs: [contact.github.url, contact.linkedin.url],
-      knowsAbout: data.skillGroups.flatMap((group) => group.skills),
+      knowsAbout: data.broaderStack.flatMap((group) => group.skills),
       alumniOf: {
         "@type": "CollegeOrUniversity",
         name: "Georgian College",
-      },
-      worksFor: {
-        "@type": "Organization",
-        name: employer.company,
       },
     },
     {
@@ -175,8 +180,17 @@ function buildLlmsTxt(data) {
     "",
     `> ${data.title} based in ${contact.location}. ${data.bio}`,
     "",
+    "## Current focus",
+    data.currentFocus.title.replace(/\n/g, " "),
+    data.currentFocus.description,
+    "",
+    "## AI & tools",
+    data.ai.description,
+    ...data.ai.areas.map(area => `- ${area.title}: ${area.description}`),
+    data.ai.note,
+    "",
     "## Skills",
-    ...data.skillGroups.map((group) => `- ${group.label}: ${group.skills.join(", ")}`),
+    ...data.broaderStack.map((group) => `- ${group.label}: ${group.skills.join(", ")}`),
     "",
     "## Experience",
     ...data.experience.flatMap((job) => [
