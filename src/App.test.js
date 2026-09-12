@@ -6,7 +6,7 @@ test('renders the new portfolio sections in order', () => {
   const { container } = render(<App />);
   expect([...container.querySelectorAll('main > section')].map(section => section.id)).toEqual(['focus', 'ai', 'skills', 'projects', 'contact']);
   expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('A robotic arm.');
-  expect(screen.getByText('Concept image · project photos coming soon')).toBeInTheDocument();
+  expect(screen.getByText(data.currentFocus.images[0].caption)).toBeInTheDocument();
 });
 
 test('preserves project websites and original images', () => {

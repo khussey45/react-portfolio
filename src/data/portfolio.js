@@ -8,14 +8,14 @@ const portfolioData = {
     description: "My current project is a robotic arm — a place to bring software, mechanical design, and electronics together.",
     images: [
       {
-        src: "/robot-arm-placeholder.png",
-        alt: "Concept image of an orange and white desktop robotic arm; temporary project illustration",
-        caption: "Concept image · project photos coming soon",
+        src: "/robot-arm.jpg",
+        alt: "Kieren’s black 3D-printed robotic arm with blue servos and a gripper on a wooden surface",
+        caption: "Robotic arm · current build",
       },
       {
-        src: "/robot-arm-detail-placeholder.png",
-        alt: "Temporary robotic arm concept showing the linkage, servos, and wiring from behind",
-        caption: "Mechanism study · temporary concept image",
+        src: "/robot-arm-wiring.jpg",
+        alt: "Wiring diagram showing an Arduino Uno, breadboard, bench power supply, and five SG90 servos",
+        caption: "Robotic arm · wiring diagram",
       },
     ],
     tags: ["Robotics", "CAD", "Electronics", "Programming"],
