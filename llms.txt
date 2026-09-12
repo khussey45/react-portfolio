@@ -1,11 +1,25 @@
 # Kieren Hussey
 
-> Full Stack Developer based in Ontario, Canada. I build web applications end to end — from Angular and React frontends to Rails and Spring Boot backends — and games in C++ on the side.
+> Technology Developer based in Ontario, Canada. Exploring the space between software, AI, and the physical world. Building things, understanding how they work, and learning along the way.
+
+## Current focus
+A robotic arm. A new set of challenges.
+My current project is a robotic arm — a place to bring software, mechanical design, and electronics together.
+
+## AI & tools
+An evolving focus on LLMs and the systems around them: agents, harnesses, and connections to real tools.
+- LLMs: Language models, context, and the interface between an idea and a useful result.
+- Agents: Tool use, planning, and multi-step workflows that move a task forward.
+- Harnesses: The instructions, tools, and feedback around an agent’s work.
+- MCP: Model Context Protocol: connecting AI applications to tools and context.
+Specific tools and build notes coming soon.
 
 ## Skills
-- Frontend: Angular, React, TypeScript, JavaScript, HTML/CSS
-- Backend & Systems: Spring Boot, Ruby on Rails, Python, SQL, C++
-- Tools & Platforms: Git/GitHub, Azure, Linode, WebAssembly, Raylib
+- Web development: Ruby on Rails, Angular, React, Spring Boot, SQL
+- Programming: C++, C, Python
+- Servers & hosting: Linode / Akamai, Linux, Ubuntu
+- Design & fabrication: CAD, Mechanical engineering
+- Electronics & control: Electrical engineering, Robotics
 
 ## Experience
 - Jr. Software Engineer, Ministry of Children, Community & Social Services (Jan 2024 — Feb 2025)
