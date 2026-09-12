@@ -9,3 +9,5 @@ Use concise, factual copy. AI-specific tools and project notes remain to be supp
 Responsive layouts collapse to one column on phones, with a toggleable navigation menu. Maintain keyboard focus styles, a skip link, semantic headings, and reduced-motion support.
 
 The current-project image carousel is manual, with previous/next buttons, a counter, clickable thumbnails, and left/right keyboard navigation. Store slides in `currentFocus.images`; use meaningful alt text and captions.
+
+Decorative background images live in `public/backgrounds/`: `engineering-blueprint.webp` for the current project and toolkit, and `circuit-board.webp` for AI and contact. Both are generated artwork, not project documentation. CSS pseudo-elements apply dark overlays and edge fades; backgrounds are noninteractive and decorative. Keep existing project photography separate.

@@ -24,7 +24,10 @@ export default function Portfolio() {
           <a className="nav-cta" href="#contact">Let’s build <span aria-hidden="true">→</span></a>
         </nav>
       </header>
-      <main id="main" className="container">
+      <main id="main" className="container" style={{
+        '--blueprint-background': `url("${process.env.PUBLIC_URL}/backgrounds/engineering-blueprint.webp")`,
+        '--circuit-background': `url("${process.env.PUBLIC_URL}/backgrounds/circuit-board.webp")`,
+      }}>
         <CurrentFocus />
         <AI />
         <Skills />
