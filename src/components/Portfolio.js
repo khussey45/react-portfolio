@@ -16,11 +16,12 @@ export default function Portfolio() {
       <a className="skip-link" href="#main">Skip to content</a>
       <header className="site-header">
         <nav className="container nav" aria-label="Main navigation">
-          <a className="brand" href="#focus" onClick={() => setMenuOpen(false)}>KIEREN <span>/</span> HUSSEY<span className="brand-dot">.</span></a>
+          <a className="brand" href="#focus" onClick={() => setMenuOpen(false)}><span className="brand-monogram" aria-hidden="true">K<span>H</span></span><span className="brand-name">KIEREN HUSSEY</span></a>
           <button className="menu-toggle" aria-expanded={menuOpen} aria-controls="nav-links" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? 'Close −' : 'Menu +'}</button>
           <div id="nav-links" className={`nav-links ${menuOpen ? 'is-open' : ''}`}>
             {links.map(([id, label]) => <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>{label}</a>)}
           </div>
+          <a className="nav-cta" href="#contact">Let’s build <span aria-hidden="true">→</span></a>
         </nav>
       </header>
       <main id="main" className="container">

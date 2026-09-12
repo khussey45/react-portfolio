@@ -43,4 +43,8 @@ test('project carousel supports arrows, wrapping, and keyboard navigation', () =
   expect(screen.getByText(`2 / ${slides.length}`)).toBeInTheDocument();
   fireEvent.keyDown(previous, { key: 'ArrowLeft' });
   expect(screen.getByAltText(slides[0].alt)).toBeInTheDocument();
+  const secondThumbnail = screen.getByRole('button', { name: 'Show project image 2' });
+  fireEvent.click(secondThumbnail);
+  expect(secondThumbnail).toHaveAttribute('aria-pressed', 'true');
+  expect(screen.getByAltText(slides[1].alt)).toBeInTheDocument();
 });

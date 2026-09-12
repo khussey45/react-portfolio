@@ -19,10 +19,18 @@ export default function CurrentFocus() {
     <div className="focus-grid">
       <div className="focus-copy">
         <p className="eyebrow"><span className="status-dot" /> CURRENTLY BUILDING</p>
-        <h1>{focus.title}</h1>
+        <h1><span className="hero-name">{data.name}</span><span className="hero-gradient">{focus.title}</span></h1>
         <p className="lede">{focus.description}</p>
         <div className="tags">{focus.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
-        <a className="text-link" href="#projects">Explore my projects <span aria-hidden="true">↘</span></a>
+        <div className="hero-actions">
+          <a className="button-primary" href="#projects">View my work <span aria-hidden="true">→</span></a>
+          <a className="button-outline" href="#contact">Get in touch</a>
+        </div>
+        <div className="hero-socials">
+          <a href={data.contact.github.url} target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a href={data.contact.linkedin.url} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href={`mailto:${data.contact.email}`}>Email ↗</a>
+        </div>
       </div>
       {activeImage && <div className="project-gallery" role="region" aria-roledescription="carousel" aria-label="Robotic arm project images" onKeyDown={handleGalleryKeyDown}>
         <figure className="focus-figure">
@@ -39,6 +47,12 @@ export default function CurrentFocus() {
             </div>}
           </figcaption>
         </figure>
+        {images.length > 1 && <div className="gallery-thumbnails" aria-label="Choose project image">
+          {images.map((image, index) => <button key={image.src} type="button" aria-label={`Show project image ${index + 1}`} aria-pressed={index === activeIndex} onClick={() => setActiveIndex(index)}>
+            <img src={image.src} alt="" loading="lazy" width="120" height="80" />
+            <span>0{index + 1}</span>
+          </button>)}
+        </div>}
       </div>}
     </div>
     <div className="intro-note"><span className="tiny-label">A LITTLE CONTEXT</span><p>{data.bio}</p></div>
