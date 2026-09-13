@@ -1,10 +1,10 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, within } from '@testing-library/react';
 import App from './App';
 import data from './data/portfolio';
 
 test('renders the new portfolio sections in order', () => {
   const { container } = render(<App />);
-  expect([...container.querySelectorAll('main > section')].map(section => section.id)).toEqual(['focus', 'ai', 'skills', 'experience', 'projects', 'contact']);
+  expect([...container.querySelectorAll('main > section')].map(section => section.id)).toEqual(['focus', 'ai', 'skills', 'experience', 'projects', 'studies', 'contact']);
   expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('A robotic arm.');
   expect(screen.getByText(data.currentFocus.images[0].caption)).toBeInTheDocument();
 });
@@ -47,4 +47,42 @@ test('project carousel supports arrows, wrapping, and keyboard navigation', () =
   fireEvent.click(secondThumbnail);
   expect(secondThumbnail).toHaveAttribute('aria-pressed', 'true');
   expect(screen.getByAltText(slides[1].alt)).toBeInTheDocument();
+});
+
+
+test('Research links lead to the research page and its navigation returns home', () => {
+  const { unmount } = render(<App />);
+  expect(screen.getByRole('link', { name: 'Research' })).toHaveAttribute('href', '/research');
+  expect(screen.getByRole('link', { name: /Explore my research/ })).toHaveAttribute('href', '/research');
+  unmount();
+  window.history.pushState({}, '', '/research');
+  try {
+    render(<App />);
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(data.studies.heading);
+    expect(screen.getByRole('link', { name: 'Research' })).toHaveAttribute('aria-current', 'page');
+    expect(screen.getByRole('link', { name: 'Projects' })).toHaveAttribute('href', '/#projects');
+    expect(screen.getByRole('link', { name: 'Contact' })).toHaveAttribute('href', '/#contact');
+  } finally {
+    window.history.replaceState({}, '', '/');
+  }
+});
+
+test.each(data.studies.topics)('$title tile opens a topic placeholder with navigation back to Research', topic => {
+  window.history.replaceState({}, '', '/research');
+  const { unmount } = render(<App />);
+  const tile = within(screen.getByRole('main')).getByRole('link', { name: topic.title });
+  const destination = `/research/${topic.slug}`;
+  expect(tile).toHaveAttribute('href', destination);
+  unmount();
+  window.history.replaceState({}, '', `${destination}/`);
+  try {
+    render(<App />);
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(topic.title);
+    expect(screen.getByText(data.studies.emptyTitle)).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /Back to Research/ })).toHaveAttribute('href', '/research');
+    expect(screen.getByRole('link', { name: 'Contact' })).toHaveAttribute('href', '/#contact');
+    expect(document.title).toBe(`${topic.title} — ${data.name}`);
+  } finally {
+    window.history.replaceState({}, '', '/');
+  }
 });

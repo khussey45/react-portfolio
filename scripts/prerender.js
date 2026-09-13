@@ -114,6 +114,10 @@ ${projects}
       </ul>
     </section>
     <section>
+      <h2><a href="/research">${escapeHtml(data.studies.title)}</a></h2>
+      <p>${escapeHtml(data.studies.description)}</p>
+    </section>
+    <section>
       <h2>Contact</h2>
       <ul>
         <li>Email: <a href="mailto:${escapeHtml(contact.email)}">${escapeHtml(contact.email)}</a></li>
@@ -227,6 +231,34 @@ function main() {
   if (!html.includes(rootTag)) {
     throw new Error("prerender: empty <div id=\"root\"></div> not found in build/index.html");
   }
+
+  const studies = data.studies;
+  const researchBody = `<div id="prerender-fallback"><header><a href="/">${escapeHtml(data.name)}</a></header><main><h1>${escapeHtml(studies.title)} — ${escapeHtml(studies.heading)}</h1><p>${escapeHtml(studies.description)}</p>${studies.topics.map(topic => `<article><h2><a href="/research/${escapeHtml(topic.slug)}">${escapeHtml(topic.title)}</a></h2></article>`).join('')}${studies.entries.length ? studies.entries.map(entry => `<article id="${escapeHtml(entry.id)}"><h2>${escapeHtml(entry.title)}</h2><p>${escapeHtml(entry.summary)}</p>${entry.paragraphs.map(paragraph => `<p>${escapeHtml(paragraph)}</p>`).join('')}</article>`).join('') : ''}</main></div>`;
+  const researchTitle = `${studies.title} — ${data.name}`;
+  const researchHtml = html.replace(rootTag, `<div id="root">${researchBody}</div>`)
+    .replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(researchTitle)}</title>`)
+    .replaceAll(`${SITE_URL}/"`, `${SITE_URL}/research"`)
+    .replaceAll('Kieren Hussey — Technology Developer', escapeHtml(researchTitle))
+    .replaceAll('Kieren Hussey — exploring robotics, AI, and software. Current work, technical toolkit, and projects.', escapeHtml(studies.description))
+    .replace('content="profile"', 'content="website"');
+  fs.mkdirSync(path.join(BUILD_DIR, 'research'), { recursive: true });
+  fs.writeFileSync(path.join(BUILD_DIR, 'research', 'index.html'), researchHtml);
+  for (const topic of studies.topics) {
+    const topicTitle = `${topic.title} — ${data.name}`;
+    const topicBody = `<div id="prerender-fallback"><header><a href="/research">${escapeHtml(studies.backToResearchLabel)}</a></header><main><h1>${escapeHtml(topic.title)}</h1><h2>${escapeHtml(studies.emptyTitle)}</h2><p>${escapeHtml(studies.emptyDescription)}</p></main></div>`;
+    const topicHtml = researchHtml.replace(researchBody, topicBody)
+      .replaceAll(escapeHtml(researchTitle), escapeHtml(topicTitle))
+      .replaceAll(`${SITE_URL}/research"`, `${SITE_URL}/research/${topic.slug}"`)
+      .replaceAll(escapeHtml(studies.description), escapeHtml(`${topic.title}. ${studies.emptyDescription}`));
+    const topicDir = path.join(BUILD_DIR, 'research', topic.slug);
+    fs.mkdirSync(topicDir, { recursive: true });
+    fs.writeFileSync(path.join(topicDir, 'index.html'), topicHtml);
+  }
+  const sitemapFile = path.join(BUILD_DIR, 'sitemap.xml');
+  const sitemap = fs.readFileSync(sitemapFile, 'utf8').replace('</urlset>',
+    studies.topics.map(topic => `  <url><loc>${SITE_URL}/research/${topic.slug}</loc><changefreq>monthly</changefreq></url>`).join('\n') + '\n</urlset>');
+  fs.writeFileSync(sitemapFile, sitemap);
+
 
   html = html.replace(rootTag, `<div id="root">${buildFallbackHtml(data)}</div>`);
   html = html.replace("</head>", `${buildJsonLd(data)}</head>`);

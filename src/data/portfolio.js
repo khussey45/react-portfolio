@@ -98,6 +98,23 @@ const portfolioData = {
     },
   ],
 
+  studies: {
+    title: "Research",
+    heading: "What I’m learning.",
+    description: "A space for a closer look at what I’m learning, from concepts to experiments and build notes.",
+    linkLabel: "Explore my research",
+    emptyTitle: "Notes coming soon.",
+    emptyDescription: "Detailed study notes will be added here as this page grows.",
+    backLabel: "Back to home",
+    backToResearchLabel: "Back to Research",
+    topics: [
+      { title: "Computation", slug: "Computation" }, { title: "Electrical", slug: "Electrical" }, { title: "Mechanical", slug: "Mechanical" }, { title: "CAD", slug: "CAD" }, { title: "Robotics", slug: "Robotics" },
+      { title: "3D Printing", slug: "3D-Printing" }, { title: "3D Simulations", slug: "3D-Simulations" }, { title: "AI", slug: "AI" }, { title: "Biology", slug: "Biology" }, { title: "Chemistry", slug: "Chemistry" }, { title: "Physics", slug: "Physics" }, { title: "Books", slug: "Books" },
+    ],
+    // Add entries with a unique id, title, summary, and paragraphs array.
+    entries: [],
+  },
+
   contact: {
     email: "khussey45@gmail.com",
     location: "Ontario, Canada",

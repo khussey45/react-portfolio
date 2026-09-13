@@ -1,9 +1,9 @@
 {
   "short_name": "Kieren Hussey",
-  "name": "Kieren Hussey — Full Stack Developer",
+  "name": "Kieren Hussey — Technology Developer",
   "icons": [
     {
-      "src": "faviconKH.ico",
+      "src": "favicon.ico",
       "sizes": "64x64 48x48 32x32 16x16",
       "type": "image/x-icon"
     },
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#0A0C10",
-  "background_color": "#0A0C10"
+  "theme_color": "#050b10",
+  "background_color": "#050b10"
 }
